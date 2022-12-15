@@ -48,7 +48,7 @@ int radix(list_t **list_a, list_t **list_b, int max, int index)
             write(1, " pb", 3);
         } else {
             rotate_first(list_a);
-            write(1, " rra", 4);
+            write(1, " ra", 3);
         }
     }
     while (*list_b != NULL) {
@@ -58,4 +58,16 @@ int radix(list_t **list_a, list_t **list_b, int max, int index)
     if (max != 0)
         radix(list_a, list_b, max, index);
     return 0;
+}
+
+int count_neg(list_t *head)
+{
+    int count = 0;
+    list_t *tmp = head;
+    while (tmp != NULL) {
+        if (tmp->value < 0)
+            count++;
+        tmp = tmp->next;
+    }
+    return count;
 }

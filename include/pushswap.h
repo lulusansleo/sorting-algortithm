@@ -31,5 +31,6 @@
     int is_sorted(list_t *list);
     int radix(list_t **list_a, list_t **list_b, int max, int index);
     void rotate_first(list_t **head);
+    int count_neg(list_t *head);
 
 #endif /* !pushswap_h */

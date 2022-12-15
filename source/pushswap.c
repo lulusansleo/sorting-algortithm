@@ -79,14 +79,19 @@ int pushswap(int ac, char **av)
     list_t *l_b = NULL;
     list_t *tmp = l_a;
     int min = get_small(&l_a);
+    int max = find_biggest(l_a), index = 0, nrneg = count_neg(l_a);
 
     if (is_sorted(l_a))
         return 0;
     rotate_first(&l_a);
     write(1, "rra", 3);
-    int max = find_biggest(l_a), index = 0;
     radix(&l_a, &l_b, max, index);
+    for (int i = 0; i < nrneg; i++) {
+        write(1, " rra", 4);
+        rotate_end(&l_a);
+    }
     write(1, "\n", 1);
+    display_list(l_a);
     free_list(l_b);
     free_list(l_a);
     return 0;
