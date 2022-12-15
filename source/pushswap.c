@@ -91,7 +91,6 @@ int pushswap(int ac, char **av)
         rotate_end(&l_a);
     }
     write(1, "\n", 1);
-    display_list(l_a);
     free_list(l_b);
     free_list(l_a);
     return 0;
