@@ -23,16 +23,6 @@ int add_node(list_t **head, char *value, int i)
     return 0;
 }
 
-void display_list(list_t *head)
-{
-    list_t *tmp = head;
-
-    while (tmp != NULL) {
-        printf("value is %d\n", tmp->value);
-        tmp = tmp->next;
-    }
-}
-
 list_t *create_list(int ac, char **av)
 {
     list_t *head = malloc(sizeof (list_t));

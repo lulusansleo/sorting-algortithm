@@ -50,29 +50,6 @@ int get_small(list_t **l_a)
     return smol;
 }
 
-void first_sort(list_t **l_a, list_t **l_b)
-{
-    int index = find_small(l_a);
-    int min = get_small(l_a);
-    int prox = len_list(l_a) / 2;
-
-    if (prox > index) {
-        while ((*l_a)->value != min) {
-            printf("ra ");
-            rotate_first(l_a);
-        }
-        throw(l_a, l_b);
-        printf("p_b ");
-    } else {
-        while ((*l_a)->value != min) {
-            printf("rra ");
-            rotate_end(l_a);
-        }
-        throw(l_a, l_b);
-        printf("p_b ");
-    }
-}
-
 int pushswap(int ac, char **av)
 {
     list_t *l_a = create_list(ac, av);

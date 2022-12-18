@@ -18,6 +18,7 @@
         struct list *next;
     } list_t;
 
+    int find_biggest(list_t *list);
     int pushswap(int ac, char **av);
     void free_list(list_t *head);
     list_t *create_list(int ac, char **av);
