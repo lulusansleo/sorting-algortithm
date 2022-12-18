@@ -40,7 +40,8 @@ int find_biggest(list_t *list)
 int radix(list_t **list_a, list_t **list_b, int max, int index)
 {
     int size = len_list(list_a);
-
+    if (is_sorted(*list_a))
+        return 0;
     max--; index++;
     for (int i = 0; i < size; i++) {
         if (((*list_a)->value >> index & 1) != 1) {
